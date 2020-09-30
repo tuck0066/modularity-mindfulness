@@ -4,6 +4,8 @@ html {
   text-size-adjust: 100%;
   font-family: "Noto Sans", sans-serif;
   line-height: 1.5;
+  background-color: #e2e2e2;
+  color: #000;
 }
 
 *,
@@ -17,11 +19,94 @@ html {
   font-style: normal;
 }
 
+header {
+  /* Removes the <header> box and allow us to directly apply header’s children to the grid. */
+  display: contents;
+}
+
 body {
   margin: 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "banner banner banner"
+  "main1  main2" "main3";
+  grid-gap: 1rem;
+}
+
+nav,
+footer {
+  color: #3783a3;
+}
+
+figcaption {
+  margin-top: 1rem;
 }
 
 img {
   display: block;
   width: 100%;
 }
+
+nav {
+  grid-column: 3 / -1;
+  grid-row: 1;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: start;
+}
+
+li {
+  margin: 0;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+h1 {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  width: 14rem;
+  font-size: 2rem;
+  order: 1;
+  margin: 1.5rem;
+}
+
+
+
+h2 {
+  color: #30658d;
+  margin: 0;
+  padding: 0;
+}
+p {
+  color: #000;
+  margin: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  display: contents;
+}
+
+/*
+## Details
+- *Text sizes:* `1rem`, `1.125rem`, `1.5rem`, `2rem`
+- *Colours:* `#e2e2e2`, `#3783a3`, `#000`
+- *Max lengths:* `30em`
+- *Gaps:* `1rem`
+- *Margins:* `1.5rem`
+- *Paddings:* `.5em 1em .6em`, 1rem`, `.5rem`
+- *Border thicknesses:* `.2rem`
+- *Corner radii:* `.3rem`
+*/
